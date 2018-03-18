@@ -1,0 +1,96 @@
+<!---
+
+    -->
+    <div class="container-fluid">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h2 class="display-3">Edicion de proyectos</h2>
+          <p class="lead">Ingresa los datos correspondientes a continuación</p>
+        </div>
+      </div>
+<form #formProyecto="ngForm" (ngsubmit)="onSubmit()" id="form-proyecto" enctype="multipart/form-data">
+  <!---
+//Recojo las categorias de mi Base de datos -->
+  <div *ngIf="categorias">
+    <select id="categoria" name="categoria"
+    [(ngModel)]="proyecto.IdCategoria"  class="form-control" class="custom-select">
+      <option selected> Selecciona la Categoria </option>
+      <option *ngFor="let cat of categorias" [value]="cat.IdCategoria"> {{cat.Categoria}} </option>
+    </select>
+  </div>
+
+<div class="form-group"> <span *ngIf="!IdImagen.valid && IdImagen.touched"> Agrega la</span>
+    <label for="formGroupExampleInput">imagen </label>
+    <input type="text" class="form-control" id="IdImagen" placeholder="IdImagen" required
+    #IdImagen="ngModel" name="IdImagen" [(ngModel)]="proyecto.IdImagen" />
+  </div>
+
+<div class="form-group"> <span *ngIf="!Cliente.valid && Cliente.touched"> Agrega el</span>
+    <label for="formGroupExampleInput">Cliente </label>
+    <input type="text" class="form-control" id="Cliente" placeholder="Cliente" required
+    #Cliente="ngModel" name="Cliente" [(ngModel)]="proyecto.Cliente" />
+  </div>
+
+
+  <div class="form-group"> <span *ngIf="!Trabajo_Realizado.valid && Trabajo_Realizado.touched"> Agrega el</span>
+    <label for="formGroupExampleInput2">Trabajo Realizado</label>
+    <input type="text" class="form-control" id="Trabajo_Realizado" placeholder="Trabajo Realizado" required
+    #Trabajo_Realizado="ngModel" name="Trabajo_Realizado" [(ngModel)]="proyecto.Trabajo_Realizado" />
+  </div>
+
+
+  <div class="form-group"> <span *ngIf="!Descripcion.valid && Descripcion.touched"> Agrega la</span>
+    <label for="formGroupExampleInput2">Descripción</label>
+    <textarea type="text" class="form-control" id="Descripcion" placeholder="Descripción"
+    #Descripcion="ngModel" name="Descripcion" [(ngModel)]="proyecto.Descripcion" required> </textarea>
+  </div>
+
+
+<div class="form-group"> <span *ngIf="!Tiempo_Invertido.valid && Tiempo_Invertido.touched"> Agrega el</span>
+  <label for="formGroupExampleInput2">Tiempo Invertido</label>
+  <input type="text" class="form-control" id="Tiempo_Invertido" placeholder="Tiempo invertido"
+  #Tiempo_Invertido="ngModel" name="Tiempo_Invertido" [(ngModel)]="proyecto.Tiempo_Invertido" required/>
+</div>
+
+
+<div class="form-group"> <span *ngIf="!Programas_Utilizados.valid && Programas_Utilizados.touched"> Agrega los</span>
+  <label for="formGroupExampleInput2">Programas Utilizados</label>
+  <input type="text" class="form-control" id="Programas_Utilizados" placeholder="Programas Utilizados"
+  #Programas_Utilizados="ngModel" name="Programas_Utilizados" [(ngModel)]="proyecto.Programas_Utilizados" required />
+</div>
+
+
+<div class="form-group">
+  <label for="formGroupExampleInput2">Fecha de Elaboración
+  <span *ngIf="!Fecha_Elaborado.valid && Fecha_Elaborado.touched" class="label label-danger"> Agrega la</span> </label>
+  <input type="text" class="form-control" id="Fecha_Elaborado" placeholder="Fecha de Elaboración"
+  #Fecha_Elaborado="ngModel" name="Fecha_Elaborado" [(ngModel)]="proyecto.Fecha_Elaborado" required />
+</div>
+
+<br>
+
+
+<div class="custom-file">
+  <input type="file" class="custom-file-input" id="customFile">
+
+  <label class="custom-file-label" for="customFile">Imagen del boceto</label>
+</div>
+<br>
+<div class="custom-file">
+  <input type="file" class="custom-file-input" id="customFile">
+  <label class="custom-file-label" for="customFile">Añade  la imagen del desarrollo</label>
+</div>
+<br>
+<div class="custom-file">
+  <input type="file" class="custom-file-input" id="customFile" #fileInput (click)="upload()">
+  <label class="custom-file-label" for="customFile">Añade  la imagen del producto final</label>
+</div>
+<br>
+
+</form>
+
+ <button  type="button" (click)="onsubmit()"  class="btn btn-success float-left" [disabled] = "!formProyecto.form.valid" >
+Subir proyecto
+ </button>
+
+    </div>

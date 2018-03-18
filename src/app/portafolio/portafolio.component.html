@@ -1,0 +1,33 @@
+<!--Submenu de categorias-->
+<div style="background: blue">
+
+  <h2 >
+  {{titulo}}
+  </h2>
+
+  <h1>Publicidad</h1>
+  <app-proyecto
+    ng-if="proyectos"
+    [proyectos]="proyectos | filtroCategoria: 'Publicidad'">
+  </app-proyecto>
+
+  <h1>Fotografia</h1>
+  <app-proyecto
+    ng-if="proyectos"
+    [proyectos]="proyectos | filtroCategoria: 'Fotografia'">
+  </app-proyecto>
+
+  <h1>Dibujo Digital</h1>
+  <app-proyecto
+    ng-if="proyectos"
+    [proyectos]="proyectos | filtroCategoria: 'Dibujo Digital'">
+  </app-proyecto>
+
+  <h1>Multimedia</h1>
+  <app-proyecto
+    ng-if="proyectos"
+    [proyectos]="proyectos | filtroCategoria: 'Multimedia'">
+  </app-proyecto>
+
+
+</div>

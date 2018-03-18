@@ -1,0 +1,59 @@
+<header >
+  <h1>
+    <a routerLink="/" routerLinkActive="active" id="minombre">Jeffryd Funez</a>
+    <figure id="linkimagen">
+      <a routerLink="/" routerLinkActive="active" >
+          <img src="\assets\Imagenes\iconos\Logo3d.svg" alt="Milogo">
+      </a>
+    </figure>
+  </h1>
+  <nav  id=MenuOcultable>
+      <figure   id="MostarIconCel" class="MenuIconCel"
+              (click)="activarMenu()" >
+
+          <img src="assets\Imagenes\iconos\Menu\Menu.svg" alt="v">
+      </figure>
+
+      <div  id="TarjetaMenucel"
+      *ngIf="mostrarMenu">
+
+          <figure id="OcultoIconCel"
+                   class="MenuIconCel"
+                  (click)="OultarMenu()">
+              <img src="assets\Imagenes\iconos\Menu\MenuClose.svg" alt="T">
+          </figure>
+          <figure id="LogoMenu">
+              <img src="\assets\Imagenes\iconos\Logo3d.svg" alt="Logo Jeffryd Funez">
+        </figure>
+        <ul>
+             <li>
+                <a routerLink="/" routerLinkActive="active">Inicio</a>
+             </li>
+            <li>
+                <a routerLink="/portafolio" routerLinkActive="active">Portafolio</a>
+            </li>
+
+            <li>
+                <a routerLink="/editarproyecto" routerLinkActive="active"> Edicion </a>
+            </li>
+
+
+            <li>
+                <a routerLink="/biografia" routerLinkActive="active">Biografía</a>
+            </li>
+            <li>
+                <a routerLink="/cv" routerLinkActive="active">CV</a>
+            </li>
+            <li>
+                <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
+            </li>
+
+        </ul>
+      </div>
+
+    </nav>
+
+
+
+
+</header>
