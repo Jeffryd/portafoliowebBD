@@ -1,33 +1,76 @@
 <!--Submenu de categorias-->
-<div style="background: blue">
+<div class="container-flui">
+  <!-- <div class="row slider align-items-center justify-content-center " >
+    <div class="col-10" >
+      <h2  id="Lproye">
+      {{titulo}}
+      </h2>
 
-  <h2 >
-  {{titulo}}
-  </h2>
+    </div>
+  </div> -->
 
-  <h1>Publicidad</h1>
-  <app-proyecto
-    ng-if="proyectos"
-    [proyectos]="proyectos | filtroCategoria: 'Publicidad'">
-  </app-proyecto>
+    <div class="row slider align-items-center justify-content-center bg-info"  >
+      <div class="col-6" >
+        <h4>Publicidad</h4>
+      </div>
+    </div>
 
-  <h1>Fotografia</h1>
-  <app-proyecto
-    ng-if="proyectos"
-    [proyectos]="proyectos | filtroCategoria: 'Fotografia'">
-  </app-proyecto>
+    <div class="row " >
+      <div class="col-sm-12 " >
+        <app-proyecto
+          ng-if="proyectos"
+          [proyectos]="proyectos | filtroCategoria: 'Publicidad'">
+        </app-proyecto>
 
-  <h1>Dibujo Digital</h1>
-  <app-proyecto
-    ng-if="proyectos"
-    [proyectos]="proyectos | filtroCategoria: 'Dibujo Digital'">
-  </app-proyecto>
+    </div>
+    </div>
 
-  <h1>Multimedia</h1>
-  <app-proyecto
-    ng-if="proyectos"
-    [proyectos]="proyectos | filtroCategoria: 'Multimedia'">
-  </app-proyecto>
+    <div class="row slider align-items-center justify-content-center bg-info"  >
+      <div class="col-6"  >
+        <h4>Fotografia</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <app-proyecto
+          ng-if="proyectos"
+          [proyectos]="proyectos | filtroCategoria: 'Fotografia'">
+        </app-proyecto>
+
+    </div>
+    </div>
+
+    <div class="row slider align-items-center justify-content-center bg-info">
+      <div class="col-7">
+        <h4>Dibujo Digital</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <app-proyecto
+          ng-if="proyectos"
+          [proyectos]="proyectos | filtroCategoria: 'Dibujo Digital'">
+        </app-proyecto>
+
+    </div>
+    </div>
+
+    <div class="row slider align-items-center justify-content-center bg-info">
+      <div class="col-5">
+        <h4>Multimedia</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <app-proyecto
+          ng-if="proyectos"
+          [proyectos]="proyectos | filtroCategoria: 'Multimedia'">
+        </app-proyecto>
+
+    </div>
+    </div>
 
 
 </div>
